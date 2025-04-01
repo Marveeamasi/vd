@@ -43,7 +43,7 @@ const AvatarPerson = ({image, title, style}) => {
                  </div>
               </div>
               </div>
-              <Link href={'/write-your-script'} className='max-w-[406px] cursor-pointer w-full h-[67px] rounded-[8px] border-[1.5px] border-[#8C8C8C] hover:opacity-75 z-10' >Create Video</Link>
+              <Link href={'/write-your-script'} className='max-w-[406px] cursor-pointer w-full h-[67px] rounded-[8px] border-[1.5px] border-[#8C8C8C] hover:opacity-75 z-10 flex justify-center items-center' >Create Video</Link>
       </div>
           </div>
   )
