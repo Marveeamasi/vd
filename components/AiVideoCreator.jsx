@@ -25,7 +25,7 @@ const AiVideoCreator
                 <Image src={'/ai-magic.png'} width={24.35} height={24.35} alt='ai magic' className='w-[24.35px] h-[24.35px]'/>
                 <div className='text-[24px]  font-[500]'>Ai Video Creator</div>
                </div>
-               <div className='flex items-center gap-5'>
+               <div className='flex items-center max-sm:flex-col gap-5'>
               <SearchBar/>
                 <div className='cursor-pointer hover:animate-pulse w-[92px] h-[24px] flex gap-2 items-center text-[14px] justify-center'>Upload <Image alt='drop down' src='/chevron-down.png' width={12} height={6} className='w-[12px] h-[6]'/></div>
                </div>
