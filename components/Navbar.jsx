@@ -32,7 +32,7 @@ const Navbar = ({isDrop, toggleDrop}) => {
               <div>Welcome</div>
               <div>Adminstrator hello</div>
             </div>
-            <Image alt='user profile' src='/user-avatar.png' width={37} height={37} className='w-[37px] h-[37px]'/>
+            <Image alt='user profile' src='/user-avatar.png' width={37} height={37} className='w-[37px] h-[37px] max-sm:w-[24px] max-sm:h-[24px]'/>
             <Image alt='chevron' src='/chevron-down.png' width={12} height={6} className='w-[12px] h-[6]'/>
             </div>
    {isDrop && <div className='flex flex-col fixed left-0 top-20 backdrop-blur-sm z-50 rounded-[6px] bg-[#140926a6] w-fit h-fit p-10 gap-10'>
