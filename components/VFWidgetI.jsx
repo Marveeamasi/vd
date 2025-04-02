@@ -5,12 +5,15 @@ import ToggleSwitch from './ToggleSwitch';
 import Select from './Select';
 import ImageCards from './ImageCards';
 import { MdShowChart } from 'react-icons/md';
+import SelectWithSearch from './SelectWithSearch';
+import SelectWithSearchMore from './SelectWithSearchMore';
 
 const VFWidgetI = () => {
     const [isContinue, setIsContinue] = useState(true);
     const [blurbg, setBlurbg] = useState(false);
     const [showCard, setShowCard] = useState(false);
     const [style, setStyle] = useState('Auto');
+    const [isLandScape, setIsLandScape] = useState(false);
 
     const handleShowCard = () => {
         setShowCard(true);
@@ -21,18 +24,18 @@ const VFWidgetI = () => {
     <>
      <div className='flex gap-3 justify-center max-sm:flex-col max-sm:items-center'>
                 <div><Image src='/person.png' alt="picture of a person" width={295} height={354} className='w-[295px] h-auto'/></div>
-                <div className={`${isContinue && 'w-fit h-[353] overflow-y-scroll'}`}>
+                <div className={`${isLandScape && 'transition-all duration-300 ease-in-out w-fit h-[353] overflow-y-scroll'}`}>
                <div className={`w-[302px] flex flex-col relative gap-1`}>
                 {blurbg && <div className='absolute w-full h-full bg-[#0000001A] backdrop-blur-[3px] z-3 rounded-[4px]'></div>}
-                {showCard && <ImageCards blurbg={blurbg} setBlurbg={setBlurbg} setShowCard={setShowCard} setStyle={setStyle}/>}
+                {showCard && <ImageCards isLandScape={isLandScape} blurbg={blurbg} setBlurbg={setBlurbg} setShowCard={setShowCard} setStyle={setStyle}/>}
                  <div className='bg-[#140926a6] w-full rounded-[4px] h-[44px] flex justify-between items-center p-[10px]'>
                     <div className='flex gap-3 items-center'>
                         <Image src={'/videoreplay.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-auto'/>
                         <div className='text-[12.51px] font-[700]'>Video Format</div>
                     </div>
                     <div className='flex gap-3 items-center'>
-                        <Image src={'/landscape.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-auto cursor-pointer hover:animate-spin'/>
-                        <Image src={'/portait.png'} alt='picture of replay' width={20} height={14} className='w-[20px] h-auto cursor-pointer hover:animate-spin'/>
+                        <Image onClick={()=> setIsLandScape(true)} src={'/landscape.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-auto cursor-pointer hover:animate-spin'/>
+                        <Image onClick={()=> setIsLandScape(false)} src={'/portait.png'} alt='picture of replay' width={20} height={14} className='w-[20px] h-auto cursor-pointer hover:animate-spin'/>
                     </div>
                  </div>
                  <div className='bg-[#140926a6] w-full rounded-[8px] h-[360px] flex justify-between items-center p-[20px]'>
@@ -111,9 +114,7 @@ const VFWidgetI = () => {
                     </div>
                     <ToggleSwitch/>
                     </div>
-                    <div className='w-full'>
-                    <Select setBlurbg={setBlurbg} blurbg={blurbg} options={["None"]}/>
-                    </div>
+                    <SelectWithSearch setBlurbg={setBlurbg} blurbg={blurbg} options={["None", "Dramatic Tension", "Future Bass", "R&B Smooth", "Trap HipHop", "Epic Orchestral", "Cyberpunk Electro", "Acoustic Folks", "Funky Groove"]}/>
                     </div>
                     <div className='bg-[#140926a6] w-full rounded-[4px] h-[111px] flex flex-col gap-1 items-center p-[10px]'>
                     <div className='flex self-center justify-between items-center w-full px-2'>
@@ -127,13 +128,13 @@ const VFWidgetI = () => {
                     <ToggleSwitch/>
                     </div>
                     <div className='w-full'>
-                    <Select setBlurbg={setBlurbg} blurbg={blurbg} options={["None"]}/>
+                    <SelectWithSearchMore setBlurbg={setBlurbg} blurbg={blurbg} options={["None", "Cabby Doctor", "Emma Earrings", "Louis", "Lao"]}/>
                     </div>
                     </div>
                </div>
                </div>
             </div>
-            <div className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>
+            {isLandScape && <div className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>}
     </>
   )
 }
