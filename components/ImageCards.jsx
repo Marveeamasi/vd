@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import ImageCard from './ImageCard'
 
-const ImageCards = ({setBlurbg, setShowCard, setStyle}) => {
+const ImageCards = ({setBlurbg, setShowCard, setStyle, isLandScape}) => {
 
     const handleClick = (name) => {
         setBlurbg(false);
@@ -11,9 +11,9 @@ const ImageCards = ({setBlurbg, setShowCard, setStyle}) => {
     }
 
   return (
-    <div className='flex justify-center absolute pt-14 z-20 items-center w-full overflow-y-scroll'>
-    <div className='w-[264px] rounded-[8px] py-[17px] px-[14px] gap-[16px] grid grid-cols-3 bg-[#261148] h-[206px]'>
-      <div onClick={()=>handleClick('Auto')} className='w-[70px] h-[70px] border border-[#CF36E9] text-[10px] font-[400] bg-[#140926] rounded-[4px] flex justify-center items-center cursor-pointer'>
+    <div className={`flex justify-center absolute pt-14 z-20 items-center w-full ${isLandScape && 'overflow-y-scroll'}`}>
+    <div className={`w-[264px] rounded-[8px] py-[17px] px-[14px] gap-[16px] grid grid-cols-3 bg-[#261148] ${isLandScape && 'h-[206px]'}`}>
+      <div onClick={()=>handleClick('Auto')} className='w-[70px] h-[70px] hover:border hover:border-[#CF36E9] text-[10px] font-[400] bg-[#140926] rounded-[4px] flex justify-center items-center cursor-pointer'>
         Auto
       </div>
       <ImageCard handleClick={handleClick} image={'/card1.png'} name={'Hyper-realistic'}/>
