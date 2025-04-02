@@ -62,8 +62,8 @@ export default function  SelectWithSearchMore({ options, setBlurbg, blurbg }) {
         <input onClick={(e)=> e.stopPropagation()} onChange={(e)=>handleSearch(e.target.value)} type="text" placeholder="Search" className="placeholder:text-[#8C8C8C] text-[10px] font-[400] bg-transparent outline-none"/>
           </div>
           <div onClick={(e)=> e.stopPropagation()} className="flex justify-between items-center w-full gap-[5px]">
-            <SelectBtn setIsDisplaced={setIsDisplaced} lists={['Language', 'English', 'French', 'Spanish']} searchable={true}/>
-           <SelectBtn setIsDisplaced={setIsDisplaced} lists={['Gender', 'Male', 'Female']} searchable={false}/>
+            <SelectBtn setDisplaced={setDisplaced} lists={['Language', 'English', 'French', 'Spanish']} searchable={true}/>
+           <SelectBtn setDisplaced={setDisplaced} lists={['Gender', 'Male', 'Female']} searchable={false}/>
           </div>
           {filteredOptions.map((option) => (
             <div
