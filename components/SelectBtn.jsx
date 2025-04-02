@@ -10,11 +10,11 @@ import Image from 'next/image'
 
 const SelectBtn = ({ searchable, lists, pos }) => {
 
-    const [showList, setShowList] = useState(true);
+    const [showList, setShowList] = useState(false);
 
     const [selectedOption, setSelectedOption] = useState(lists[0]);
 
-    const [isDisplaced, setIsDisplaced] = useState(true);
+    const [isDisplaced, setIsDisplaced] = useState(false);
 
 
 
