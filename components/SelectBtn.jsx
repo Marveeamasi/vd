@@ -18,7 +18,6 @@ const SelectBtn = ({ searchable, lists, setDisplaced }) => {
             onClick={(e) => {
                 e.stopPropagation(); 
                 setShowList(prev => !prev);
-                setDisplaced(true);
             }} 
             className="flex relative items-center py-[6px] px-[9px] rounded-[4px] bg-[#140926] justify-between w-1/2 cursor-pointer"
         >
