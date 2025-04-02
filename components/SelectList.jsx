@@ -22,7 +22,7 @@ export default function SelectList({ lists, searchable, handleClick, setShowList
 
   return (
     <div 
-        className="w-[122px] shadow-lg py-[10px] gap-[5px] transition-all duration-300 ease-in-out px-[5px] rounded-[8px] bg-[#261148] absolute top-[110%] left-0 flex flex-col items-center justify-center z-30"
+        className="w-[122px] shadow-lg py-[10px] gap-[5px] transition-all duration-300 ease-in-out px-[5px] rounded-[8px] bg-[#261148] absolute top-[110%] left-0 flex flex-col items-center justify-center z-[1111]"
         onClick={(e) => e.stopPropagation()}
     >
         {searchable && (
