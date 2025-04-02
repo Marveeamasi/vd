@@ -22,9 +22,8 @@ export default function SelectList({ lists, searchable, handleClick, setShowList
 
   return (
     <div 
-        className="w-[122px] shadow-lg py-[10px] gap-[5px] transition-all duration-300 ease-in-out px-[5px] rounded-[8px] bg-[#261148] absolute top-[110%] left-0 flex flex-col items-center justify-center z-[1111]"
+        className="w-[122px] shadow-lg py-[10px] gap-[5px] transition-all duration-300 ease-in-out px-[5px] rounded-[8px] bg-[#261148] absolute top-[110%] left-0 flex flex-col items-center justify-center z-50"
         onClick={(e) => e.stopPropagation()}
-      style={{zIndex: '11111'}}
     >
         {searchable && (
             <div className="bg-[#140926] w-full h-[35px] rounded-[4px] py-[10px] px-[12px] hover:border hover:border-[#CF36E9] flex items-center gap-[10px]">
@@ -48,7 +47,7 @@ export default function SelectList({ lists, searchable, handleClick, setShowList
             <div
                 onClick={(e) => {
                     e.stopPropagation();
-                    handleClick(option); // Update selected option
+                    handleClick(option);
                     setShowList(false);
                 }}
                 key={option}
