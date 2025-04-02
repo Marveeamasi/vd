@@ -1,14 +1,13 @@
 'use client'
-import MainBar from "@/components/MainBar";
-import SideBarBottomBar from "@/components/SideBarBottomBar";
-import { useState } from "react";
+import AiVideoCreator from "@/components/AiVideoCreator";
+import SideBarForAi from "@/components/SideBarForAi";
 
-export default function Home() {
-
+export default function AiPage() {
+  
   return (
   <div className="flex w-full h-full">
-    <SideBarBottomBar section={''}/>
-    <MainBar/>
+    <SideBarForAi/>
+    <AiVideoCreator/>
   </div>
   );
 }
