@@ -8,6 +8,7 @@ export default function  SelectWithSearchMore({ options, setBlurbg, blurbg }) {
   const [selectedOption, setSelectedOptions] = useState(options[0]);
   const [showOption, setShowOption] = useState(false);
   const [filteredOptions, setFilteredOptions] = useState(options);
+  const [displaced, setDisplaced] = useState(false);
 
   const handleOption = () => {
     setShowOption(!showOption); 
@@ -49,7 +50,7 @@ export default function  SelectWithSearchMore({ options, setBlurbg, blurbg }) {
         />
       </div>
       {showOption && (
-        <div className="w-[262px] shadow-lg py-[17px] gap-[5px] transition-all duration-300 ease-in-out px-[14px] rounded-[8px] bg-[#261148] absolute bottom-[110%] left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-30">
+        <div className={`w-[262px] shadow-lg py-[17px] gap-[5px] transition-all duration-300 ease-in-out px-[14px] rounded-[8px] bg-[#261148] absolute bottom-[110%] left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center ${displaced? 'z-2':'z-30'}`}>
           <div className="bg-[#140926] w-[234px] h-[35px] rounded-[4px] py-[10px] px-[12px] hover:border hover:border-[#CF36E9] flex items-center gap-[10px]">
           <Image
           src="/search-white.png"
@@ -61,8 +62,8 @@ export default function  SelectWithSearchMore({ options, setBlurbg, blurbg }) {
         <input onClick={(e)=> e.stopPropagation()} onChange={(e)=>handleSearch(e.target.value)} type="text" placeholder="Search" className="placeholder:text-[#8C8C8C] text-[10px] font-[400] bg-transparent outline-none"/>
           </div>
           <div onClick={(e)=> e.stopPropagation()} className="flex justify-between items-center w-full gap-[5px]">
-            <SelectBtn lists={['Language', 'English', 'French', 'Spanish']} searchable={true}/>
-           <SelectBtn lists={['Gender', 'Male', 'Female']} searchable={false}/>
+            <SelectBtn setIsDisplaced={setIsDisplaced} lists={['Language', 'English', 'French', 'Spanish']} searchable={true}/>
+           <SelectBtn setIsDisplaced={setIsDisplaced} lists={['Gender', 'Male', 'Female']} searchable={false}/>
           </div>
           {filteredOptions.map((option) => (
             <div
