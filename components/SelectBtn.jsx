@@ -3,14 +3,19 @@ import React, { useEffect, useState } from 'react'
 import SelectList from './SelectList'
 import Image from 'next/image'
 
-const SelectBtn = ({ searchable, lists, setDisplaced }) => {
-    const [showList, setShowList] = useState(false);
+const SelectBtn = ({ searchable, lists, pos }) => {
+    const [showList, setShowList] = useState(true);
     const [selectedOption, setSelectedOption] = useState(lists[0]);
+    const [isDisplaced, setIsDisplaced] = useState(true);
+
+    useEffect(() => {
+        console.log('showList is:', showList);
+    }, [showList]);
 
     const handleClick = (value) => {
         setSelectedOption(value);
         setShowList(false);
-        setDisplaced(false);
+        setIsDisplaced(false);
     }
 
     return (
@@ -18,9 +23,11 @@ const SelectBtn = ({ searchable, lists, setDisplaced }) => {
             onClick={(e) => {
                 e.stopPropagation(); 
                 setShowList(prev => !prev);
+                setIsDisplaced(true);
             }} 
             className="flex relative items-center py-[6px] px-[9px] rounded-[4px] bg-[#140926] justify-between w-1/2 cursor-pointer"
         >
+             {isDisplaced && <div onClick={(e)=> e.stopPropagation()} className={`absolute w-[306px] h-[357px] bg-[#0000001A] backdrop-blur-[3px]  top-[-110%] z-40 ${pos==='right'? 'left-[-135%]' : 'right-[-135%]'} rounded-[4px]`}></div>}
             {selectedOption}
             <Image
                 src="/arrow-left.png"
@@ -30,7 +37,7 @@ const SelectBtn = ({ searchable, lists, setDisplaced }) => {
                 className="h-[20px] w-[20px]" 
             />
             {showList && (
-                <SelectList 
+                <SelectList
                     searchable={searchable} 
                     lists={lists} 
                     handleClick={handleClick} 
@@ -38,6 +45,7 @@ const SelectBtn = ({ searchable, lists, setDisplaced }) => {
                 />
             )}
         </button>
+   
     )
 }
 
