@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import SelectList from './SelectList'
 import Image from 'next/image'
 
-const SelectBtn = ({ searchable, lists }) => {
+const SelectBtn = ({ searchable, lists, setDisplaced }) => {
     const [showList, setShowList] = useState(false);
     const [selectedOption, setSelectedOption] = useState(lists[0]);
 
@@ -14,6 +14,7 @@ const SelectBtn = ({ searchable, lists }) => {
     const handleClick = (value) => {
         setSelectedOption(value);
         setShowList(false);
+        setDisplaced(true);
     }
 
     return (
