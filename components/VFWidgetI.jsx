@@ -4,20 +4,24 @@ import Image from 'next/image'
 import ToggleSwitch from './ToggleSwitch';
 import Select from './Select';
 import ImageCards from './ImageCards';
-import { MdShowChart } from 'react-icons/md';
 import SelectWithSearch from './SelectWithSearch';
 import SelectWithSearchMore from './SelectWithSearchMore';
+import { useRouter } from 'next/navigation';
 
 const VFWidgetI = () => {
-    const [isContinue, setIsContinue] = useState(true);
     const [blurbg, setBlurbg] = useState(false);
     const [showCard, setShowCard] = useState(false);
     const [style, setStyle] = useState('Auto');
     const [isLandScape, setIsLandScape] = useState(false);
+    const router = useRouter();
 
     const handleShowCard = () => {
         setShowCard(true);
         setBlurbg(true)
+    }
+
+    const handleContinue = () => {
+        router.push('/preview')
     }
 
   return (
@@ -134,7 +138,7 @@ const VFWidgetI = () => {
                </div>
                </div>
             </div>
-            {isLandScape && <div className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>}
+            {isLandScape && <div onClick={handleContinue} className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>}
     </>
   )
 }
