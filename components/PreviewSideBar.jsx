@@ -25,14 +25,14 @@ const handleSelectClick = (name) => {
         <ToggleSwitch/>
       </div>
       <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'top-[110%]'} type={''} name={'Body Language'} options={['Gesture 1','Gesture 2']} image={'/video-camera-ai.png'}/>
-      <div className={`flex relative  ${selectName==='Caption'? 'z-50':'z-10'} items-center justify-between text-[12.51px] font-[700]`}>
+      <div className={`flex relative  ${selectName==='Ai Caption'? 'z-50':'z-10'} items-center justify-between text-[12.51px] font-[700]`}>
         Caption
         <ToggleSwitch/>
       </div>
-      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={'caption'} name={'Ai Caption'} options={['DYNAMIC']} image={'/closed-caption.png'}/>
-      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={'background'} name={'Background'} options={['None']} image={''}/>
-      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={''} name={'Music'} options={['Dramatic tension 2']} image={'/music-note-square.png'}/>
-      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={''} name={'Voice'} options={['John Doe']} image={'/voice.png'}/>
+      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'top-[110%]'} type={'caption'} name={'Ai Caption'} options={['DYNAMIC', 'PROFESSIONAL', 'DOCUMENTARY']} image={'/closed-caption.png'}/>
+      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={'background'} name={'Background'} options={['None','Upload', 'Mist','Mist','Mist','Mist']} image={''}/>
+      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={''} name={'Music'} options={['Cyberpunk Electro','Cyberpunk Electro','Dramatic tension 2']} image={'/music-note-square.png'}/>
+      <PreviewSideBarSelect setBlurbg={setBlurbg} selectName={selectName} setSelectName={setSelectName} handleSelectClick={handleSelectClick} pos={'bottom-[110%]'} type={''} name={'Voice'} options={['John Doe', 'John Doe', 'John Doe', 'John Doe', 'John Doe']} image={'/voice.png'}/>
      {blurbg && <div className='bg-[#0000001A] backdrop-blur-[2px] absolute top-0 w-full h-full z-20'></div>}
      </div>
      </div>
