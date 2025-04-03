@@ -37,7 +37,7 @@ const MusicDrop = ({handleSelectOption, pos, options, kill}) => {
              <div className='grid grid-cols-1 gap-1'>
                                         {options.map((option, i)=> (
                                               <div key={i} onClick={()=>handleSelectOption(option)} className={`w-full hover:border hover:border-[#CF36E9] h-[40px] text-[12.51px] font-[400] bg-[#261148] rounded-[4px] flex gap-3 p-2 items-center cursor-pointer`}>
-                                            <Image src={'/play-square.png'} width={20} height={20} className='w-[20px] h-[20px]' alt='play'/>
+                                            <Image src={'/play-square-purple.png'} width={20} height={20} className='w-[20px] h-[20px]' alt='play'/>
                                              {option}
                                                   </div>
                                         ))}
