@@ -1,6 +1,9 @@
 'use client';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
+import PaymentAlert from './PaymentAlert';
+import Generating from './Generating';
+import Trouble from './Trouble';
 
 const PreviewMain = () => {
   const [isLandScape, setIsLandScape] = useState(true);
@@ -8,6 +11,25 @@ const PreviewMain = () => {
   const thumbnailRef = useRef(null);
   const dragRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [showPaymentAlert, setShowPaymentAlert] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleNextStep = () => {
+    console.log('Loading complete! Moving to next step...');
+    setError(true);
+    setGenerating(false);
+  }
+
+  const handleRetry = () => {
+     setError(false);
+     setGenerating(true);
+  }
+
+  const handleCancel = () => {
+    setError(false);
+    setGenerating(false);
+  }
 
   const handleMove = (e) => {
     if (isDragging && thumbnailRef.current && dragRef.current) {
@@ -18,6 +40,11 @@ const PreviewMain = () => {
       setSplitPosition(Math.max(0, Math.min(100, newPosition)));
     }
   };
+
+  const handleBtn = () => {
+    setShowPaymentAlert(false);
+    setGenerating(true);
+  }
 
   const handleStart = (e) => {
     e.preventDefault();
@@ -149,10 +176,14 @@ const PreviewMain = () => {
       </div>
       </div>
       <button
+      onClick={()=> setShowPaymentAlert(true)}
         className='bg-[#9413E6] text-white text-[16px] max-sm:max-w-full font-[500] mt-2 cursor-pointer rounded-[4px] hover:opacity-[.75] z-5 w-full max-w-[295px] h-[49px]'
       >
         Generate
       </button>
+      {showPaymentAlert && <PaymentAlert handleBtn={handleBtn} setShowPaymentAlert={setShowPaymentAlert}/>}
+      {generating && <Generating z={'z-20'} nextStep={handleNextStep}/>}
+      {error && <Trouble z={'z-20'} handleCancel={handleCancel} handleRetry={handleRetry}/>}
     </div>
   );
 };
