@@ -58,7 +58,7 @@ const Container = () => {
     ];
 
     const handleNext = () => {
-        if(currentStep===3) router.push('/');
+        if(currentStep===3) router.push('/consent-video');
         setCurrentStep((prev) => (prev < steps.length - 1 ? prev + 1 : prev));
     };
 
