@@ -282,7 +282,7 @@ const VoicesMain = () => {
                  {next? <NextWidget/> : <FirstWidget/>}
 
           </div>}
-          {showEdit && <div onClick={hideEdit} className='w-screen h-screen transistion-all duration-300 ease-in-out fixed top-0 left-0 z-[11111] p-5 bg-[#00000033] backdrop-blur-[2px] flex justify-center items-center'>
+          {showEdit && <div onClick={()=> setShowEdit(false)} className='w-screen h-screen transistion-all duration-300 ease-in-out fixed top-0 left-0 z-[11111] p-5 bg-[#00000033] backdrop-blur-[2px] flex justify-center items-center'>
                 <EditWidget/>
 
           </div>}
