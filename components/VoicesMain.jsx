@@ -39,7 +39,7 @@ const VoicesMain = () => {
                     </div>
                     <div className='flex flex-col gap-1'>
                           <div className='flex items-center gap-1'>
-                            <Image src={'/cloud-upload.png'} alt='tips' width={24} height={24} className=''/>
+                            <Image src={'/tips.png'} alt='tips' width={24} height={24} className=''/>
                             <h1 className='text-[20px]'>Audio recording tips</h1>
                           </div>
                           <p className='text-[#8C8C8C] text-sm'>To ensure the best quality of your voice avatar, please follow these guidelines when recording your audio:</p>
