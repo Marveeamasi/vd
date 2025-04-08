@@ -120,16 +120,17 @@ const VoicesMain = () => {
       )
     }
 
-    const EditWidget = () => {
+    const EditWidget = ({ onClose, voiceId }) => {
       const [audioName, setAudioName] = useState('')
       const [stability, setStability] = useState(67)
       const [cNs, setCNs] = useState(50) 
       const [styleExagg, setStyleExagg] = useState(0)
     
       const handleUpdateAvatar = () => {
-        console.log('Updating audio with:', { audioName, stability, cNs, styleExagg });
-        setShowEdit(false);
-      }
+        console.log('Updating audio with:', { audioName, stability, cNs, styleExagg, voiceId });
+        onClose();
+    }
+
     
       const Select = () => {
         return (
@@ -296,10 +297,11 @@ const VoicesMain = () => {
                  {next? <NextWidget/> : <FirstWidget/>}
 
           </div>}
-          {showEdit && <div onClick={()=> setShowEdit(false)} className='w-screen h-screen transistion-all duration-300 ease-in-out fixed top-0 left-0 z-[11111] p-5 bg-[#00000033] backdrop-blur-[2px] flex justify-center items-center'>
-                <EditWidget/>
-
-          </div>}
+           {Object.keys(voiceEdit).some(key => voiceEdit[key]) && (
+                <div onClick={() => setVoiceEdit({})} className='w-screen h-screen transistion-all duration-300 ease-in-out fixed top-0 left-0 z-[11111] p-5 bg-[#00000033] backdrop-blur-[2px] flex justify-center items-center'>
+                    <EditWidget onClose={() => setVoiceEdit({})} voiceId={Object.keys(voiceEdit).find(key => voiceEdit[key])} />
+                </div>
+            )}
              </div>
   )
 }
