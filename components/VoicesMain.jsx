@@ -15,8 +15,8 @@ const VoicesMain = () => {
     const [isUpload, setIsUpload] = useState(false);
     const [avatarVoices, setAvatarVoices] = useState([]);
     const [elevenVoices, setElevenVoices] = useState([]);
-    const [showUtils, setShowUtils] = useState(false);
-    const [showEdit, setShowEdit] = useState(false);
+    const [voiceUtils, setVoiceUtils] = useState({});
+    const [voiceEdit, setVoiceEdit] = useState({});
 
     
     const handleCreateAvatar = () => {
@@ -28,6 +28,20 @@ const VoicesMain = () => {
     const handleCreateEleven = () => {
       setElevenVoices(elevenVoicesDb);
     }
+
+    const toggleUtils = (voiceId) => {
+        setVoiceUtils(prev => ({
+            ...prev,
+            [voiceId]: !prev[voiceId]
+        }));
+    };
+
+    const toggleEdit = (voiceId) => {
+        setVoiceEdit(prev => ({
+            ...prev,
+            [voiceId]: !prev[voiceId]
+        }));
+    };
 
 
     const FirstWidget = () => {
@@ -245,9 +259,9 @@ const VoicesMain = () => {
                       <span>{voice.name}</span> <span>{voice.total} Aud</span>
                     </div>
                     <div className='cursor-pointer'>
-                    <Image onClick={()=> setShowUtils(!showUtils)} src={'/vertical-circles.png'} alt='vertical circles' width={24} height={24} className='w-[24px] h-[24px]'/>
+                    <Image onClick={() => toggleUtils(i)} src={'/vertical-circles.png'} alt='vertical circles' width={24} height={24} className='w-[24px] h-[24px]'/>
                     </div>
-                    {showUtils && <UtilsCard bg={'bg-[#261148]'} pos={'bottom-[-160px] right-0'} setShowEdit={setShowEdit}/>}
+                    {voiceUtils[i] && <UtilsCard bg={'bg-[#261148]'} pos={'bottom-[-160px] right-0'} setShowEdit={() => toggleEdit(i)}/>}
               </div>
               )}
             </div>
@@ -266,9 +280,9 @@ const VoicesMain = () => {
                       <span>{voice.name}</span>
                     </div>
                     <div className='cursor-pointer'>
-                    <Image onClick={()=> setShowUtils(!showUtils)} src={'/vertical-circles.png'} alt='vertical circles' width={24} height={24} className='w-[24px] h-[24px]'/>
+                    <Image onClick={() => toggleUtils(`eleven-${i}`)} src={'/vertical-circles.png'} alt='vertical circles' width={24} height={24} className='w-[24px] h-[24px]'/>
                     </div>
-                    {showUtils && <UtilsCard bg={'bg-[#261148]'} pos={'bottom-[-160px] right-0'} setShowEdit={setShowEdit}/>}
+                    {voiceUtils[`eleven-${i}`] && <UtilsCard bg={'bg-[#261148]'} pos={'top-[-160px] right-0'} setShowEdit={() => toggleEdit(`eleven-${i}`)}/>}
               </div>
               )}
             </div>
