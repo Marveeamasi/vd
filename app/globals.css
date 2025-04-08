@@ -87,3 +87,29 @@ body {
 .pulse-fast {
   animation: pulse-fast 1s infinite;
 }
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  background: #9413E6;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 8px; 
+  height: 8px;
+  background: #9413E6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type='range']::-ms-thumb {
+  width: 8px;
+  height: 8px;
+  background: #9413E6;
+  border-radius: 50%;
+  cursor: pointer;
+}
