@@ -25,10 +25,10 @@ const Navbar = ({isDrop, toggleDrop}) => {
         <div className='sm:hidden flex text-[19.2px] hover:cursor-pointer hover:animate-pulse gap-[6px] items-center font-[500]'>
            <Image onClick={toggleDrop} className={`w-[30px] h-auto transition-all duration-700 ${ isDrop && 'rotate-180'}`} src={"/arrow-down.png"} alt='dropdown' width={50} height={50}/>
         </div>
-        <div className='cursor-pointer hover:animate-pulse w-[92px] h-[24px] flex gap-2 rounded-[18px] text-[14px] border  border-[#CF36E9] items-center justify-center'>Upload <Image alt='drop down' src='/chevron-down.png' width={12} height={6} className='w-[12px] h-[6]'/></div>
+        <div className='cursor-pointer hover:animate-pulse w-[92px] max-sm:w-fit max-sm:p-2 h-[24px] flex gap-2 rounded-[18px] text-[14px] max-sm:text-[10px] border  border-[#CF36E9] items-center justify-center'>Upload <Image alt='drop down' src='/chevron-down.png' width={12} height={6} className='w-[12px] max-sm:w-[8px] max-sm:h-auto h-[6]'/></div>
         <div className='cursor-pointer hover:animate-bounce'><Image alt='bell' src='/bell.png' width={20} height={24} className='w-[20px] h-auto'/></div>
         <div className='cursor-pointer hover:animate-pulse w-[174px] h-[37px] flex gap-1 items-center justify-end'>
-            <div className='flex flex-col gap-1 items-end text-[10px] font-[500]'>
+            <div className='flex flex-col gap-1 items-end text-[10px] max-sm:text-[8px] font-[500]'>
               <div>Welcome</div>
               <div>Adminstrator hello</div>
             </div>
