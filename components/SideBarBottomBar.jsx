@@ -12,9 +12,9 @@ const SideBarBottomBar = ({section}) => {
             <div className='max-sm:hidden'>How it Works</div>
         </Link>
         <div className='relative p-5 flex justify-center items-center max-xl:hidden'><Image src='/verticalline.png' className='absolute left-[55px] w-[4px] h-auto' alt="vertical" width={4} height={40}/></div>
-        <Link href={'/consent-video'} className="flex items-center max-xl:flex-row-reverse gap-5 px-10 cursor-pointer group hover:opacity-[1]" style={{opacity: section==='consent'? '1':'0.4'}}>
+        <Link href={'/consent-video'} className="flex items-center max-xl:flex-row-reverse gap-5 px-10 cursor-pointer group hover:opacity-[1]" style={{opacity: section==='consent'|| section==='upload'? '1':'0.4'}}>
         <Image src="/verifyicon.png" alt="lightbulb" width={34} height={34} className='w-[34px] h-auto'/>
-        <div className="group-hover:opacity-[1] max-sm:hidden" style={{opacity: section==='consent'? '1':'0.4'}}>Consent video</div>
+        <div className="group-hover:opacity-[1] max-sm:hidden" style={{opacity: section==='consent' || section==='upload'? '1':'0.4'}}>Consent video</div>
         </Link>
         <div className='group hover:opacity-[1] max-xl:my-auto' style={{opacity: section==='upload'? '1':'0.4'}}>
         <div className="relative p-5 flex justify-center items-center max-xl:hidden">
