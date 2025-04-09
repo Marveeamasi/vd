@@ -47,6 +47,7 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
                                                      className="h-[16px] w-[16px]"
                                                  />
                                                  <input
+                                                     onChange={(e) => e.stopPropagation()}
                                                      onChange={(e) => handleSearch(e.target.value)} 
                                                      type="text" 
                                                      placeholder="Search" 
