@@ -36,7 +36,9 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
                                   Public Avatar
                                  </div>
                                  </div>
-                                  <div className="bg-[#140926] w-full h-[35px] border border-[#8C8C8C80] rounded-[4px] py-[10px] px-[12px] hover:border-[#CF36E9] flex items-center gap-[10px]">
+                                  <div
+                                   onClick={(e) => e.stopPropagation()} 
+                                   className="bg-[#140926] w-full h-[35px] border border-[#8C8C8C80] rounded-[4px] py-[10px] px-[12px] hover:border-[#CF36E9] flex items-center gap-[10px]">
                                                  <Image
                                                      src="/search-white.png"
                                                      alt="search icon"
@@ -44,8 +46,7 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
                                                      height={16}
                                                      className="h-[16px] w-[16px]"
                                                  />
-                                                 <input 
-                                                     onClick={(e) => e.stopPropagation()} 
+                                                 <input
                                                      onChange={(e) => handleSearch(e.target.value)} 
                                                      type="text" 
                                                      placeholder="Search" 
