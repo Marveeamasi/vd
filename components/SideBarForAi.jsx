@@ -156,7 +156,7 @@ const SideBarForAi = () => {
 
   return (
     <>
-    <aside className='bg-[#261148] w-[380px] h-screen transition-all max-xl:hidden duration-300 ease-in-out border-r-4 border-r-[#1409261a] flex flex-col font-[500] text-[16px] sticky left-0 top-0 z-30'>
+    <aside className='bg-[#261148] w-[380px] h-screen transition-all max-lg:hidden duration-300 ease-in-out border-r-4 border-r-[#1409261a] flex flex-col font-[500] text-[16px] sticky left-0 top-0 z-30'>
       <div className='w-fit h-fit py-[41px] px-[24px] mb-[20px]'>
         <Image width={214} height={44} src={`/logo.png`} alt='logo' className='w-[214px] h-[44px]' />
       </div>
@@ -237,7 +237,7 @@ const SideBarForAi = () => {
       </nav>
     </aside>
    {showBar &&
-   <aside className='bg-[#261148] w-[380px] h-screen transition-all pb-20 duration-300 ease-in-out border-r-4 max-xl:fixed max-xl:top-0 max-xl:left-0 max-xl:z-[111] border-r-[#1409261a] flex flex-col font-[500] text-[16px] sticky left-0 top-0 z-30'>
+   <aside className='bg-[#261148] w-[380px] h-screen transition-all pb-20 duration-300 ease-in-out border-r-4 max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:z-[111] border-r-[#1409261a] flex flex-col font-[500] text-[16px] sticky left-0 top-0 z-30'>
       <div className='w-fit h-fit py-[41px] px-[24px] mb-[20px]'>
         <Image width={214} height={44} src={`/logo.png`} alt='logo' className='w-[214px] h-[44px]' />
       </div>
@@ -317,7 +317,7 @@ const SideBarForAi = () => {
         ))}
       </nav>
     </aside>}
-    <nav onClick={()=> setShowBar(!showBar)} className='cursor-pointer xl:hidden w-screen h-[50px] bg-[#261148] rounded-t-4xl border-t border-t-[#ffffff1a] fixed bottom-0 z-[1111] flex justify-center items-center'>
+    <nav onClick={()=> setShowBar(!showBar)} className='cursor-pointer lg:hidden w-screen h-[50px] bg-[#261148] rounded-t-4xl border-t border-t-[#ffffff1a] fixed bottom-0 z-[1111] flex justify-center items-center'>
         <Image alt='chevron' src='/chevron-down.png' width={20} height={20} className={`w-[20px] transition-all duration-300 ease-in-out h-auto ${showBar? 'rotate-0':'rotate-180'}`}/>
     </nav>
     </>
