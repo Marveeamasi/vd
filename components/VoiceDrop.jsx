@@ -36,9 +36,7 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
                                   Public Avatar
                                  </div>
                                  </div>
-                                  <div
-                                   onClick={(e) => e.stopPropagation()} 
-                                   className="bg-[#140926] w-full h-[35px] border border-[#8C8C8C80] rounded-[4px] py-[10px] px-[12px] hover:border-[#CF36E9] flex items-center gap-[10px]">
+                                  <div className="bg-[#140926] w-full h-[35px] border border-[#8C8C8C80] rounded-[4px] py-[10px] px-[12px] hover:border-[#CF36E9] flex items-center gap-[10px]">
                                                  <Image
                                                      src="/search-white.png"
                                                      alt="search icon"
@@ -46,8 +44,8 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
                                                      height={16}
                                                      className="h-[16px] w-[16px]"
                                                  />
-                                                 <input
-                                                     onChange={(e) => e.stopPropagation()}
+                                                 <input 
+                                                     onClick={(e) => e.stopPropagation()} 
                                                      onChange={(e) => handleSearch(e.target.value)} 
                                                      type="text" 
                                                      placeholder="Search" 
@@ -61,7 +59,7 @@ const VoiceDrop = ({handleSelectOption, pos, options, kill}) => {
              <div className='grid grid-cols-1 gap-1'>
                                         {filteredOptions.map((option, i)=> (
                                               <div key={i} onClick={()=>handleSelectOption(option)} className={`w-full hover:border hover:border-[#CF36E9] h-[40px] text-[12.51px] font-[400] bg-[#261148] rounded-[4px] flex gap-3 p-2 items-center cursor-pointer`}>
-                                            <Image src={'/play-square-purple.png'} width={20} height={20} className='w-[20px] h-[20px]' alt='play'/>
+                                            <Image src={'/play-square.png'} width={20} height={20} className='w-[20px] h-[20px]' alt='play'/>
                                              {option}
                                                   </div>
                                         ))}
