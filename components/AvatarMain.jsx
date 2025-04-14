@@ -32,7 +32,7 @@ const AvatarMain = () => {
               </div>
               <div className="flex flex-col gap-5 max-sm:items-center">
                 <div className="max-w-[309px] max-sm:text-center text-[#D9D9D9]">Create your own avatar, adapted to your needs, with your own face.</div>
-              <div onClick={toggleCreate} className='cursor-pointer hover:animate-pulse w-[196px] rounded-[4px] bg-[#CF36E9] font-[500] h-[44px] flex gap-2 items-center text-[20px] justify-center'><Image alt='add' src='/add-icon.png' width={24} height={24} className='w-[24px] h-[24]'/>Create Avatar</div>
+              <div onClick={toggleCreate} className='cursor-pointer z-2 hover:animate-pulse w-[196px] rounded-[4px] bg-[#CF36E9] font-[500] h-[44px] flex gap-2 items-center text-[20px] justify-center'><Image alt='add' src='/add-icon.png' width={24} height={24} className='w-[24px] h-[24]'/>Create Avatar</div>
               </div>
             </div>
             <div className='flex gap-1 items-center max-sm:self-center px-5'>Public <div className='text-[13.43px] bg-[#341E58] w-[26px] h-[26px] rounded-[3.35px] flex justify-center items-center'>43</div></div>
