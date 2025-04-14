@@ -27,8 +27,8 @@ const VFWidgetI = () => {
   return (
     <>
      <div className='flex gap-3 justify-center max-sm:flex-col max-sm:items-center'>
-                <div><Image src='/person.png' alt="picture of a person" width={295} height={354} className='w-[295px] h-auto'/></div>
-                <div className={`${isLandScape && 'transition-all duration-300 ease-in-out w-fit h-[353] overflow-y-scroll'}`}>
+                <div><Image src='/person.png' alt="picture of a person" width={610} height={354} className={` ${isLandScape? 'w-[610px] object-fill h-[354px]':'w-[400px] h-[741px] object-cover'} object-top rounded-[8px]`}/></div>
+                <div className={`${isLandScape && 'transition-all duration-300 ease-in-out w-fit h-[354px] overflow-y-scroll'}`}>
                <div className={`w-[302px] flex flex-col relative gap-1`}>
                 {blurbg && <div className='absolute w-full h-full bg-[#0000001A] backdrop-blur-[3px] z-3 rounded-[4px]'></div>}
                 {showCard && <ImageCards isLandScape={isLandScape} blurbg={blurbg} setBlurbg={setBlurbg} setShowCard={setShowCard} setStyle={setStyle}/>}
@@ -37,9 +37,15 @@ const VFWidgetI = () => {
                         <Image src={'/videoreplay.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-auto'/>
                         <div className='text-[12.51px] font-[700]'>Video Format</div>
                     </div>
-                    <div className='flex gap-3 items-center'>
-                        <Image onClick={()=> setIsLandScape(true)} src={'/landscape.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-auto cursor-pointer hover:animate-spin'/>
-                        <Image onClick={()=> setIsLandScape(false)} src={'/portait.png'} alt='picture of replay' width={20} height={14} className='w-[20px] h-auto cursor-pointer hover:animate-spin'/>
+                    <div className='flex gap-1 items-center'>
+                       {isLandScape ? 
+                       <Image onClick={()=> setIsLandScape(true)} src={'/landscape.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-[24px] cursor-pointer hover:animate-spin'/>
+                       :
+                       <Image onClick={()=> setIsLandScape(true)} src={'/landscapegray.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-[24px] cursor-pointer hover:animate-spin'/>}
+                       {isLandScape ? 
+                       <Image onClick={()=> setIsLandScape(false)} src={'/portait.png'} alt='picture of replay' width={18} height={24} className='w-[18px] h-[24px] cursor-pointer hover:animate-spin'/>
+                       :
+                       <Image onClick={()=> setIsLandScape(false)} src={'/portraitred.png'} alt='picture of replay' width={24} height={24} className='w-[24px] h-[24px] cursor-pointer hover:animate-spin'/>}
                     </div>
                  </div>
                  <div className='bg-[#140926a6] w-full rounded-[8px] h-[360px] flex justify-between items-center p-[20px]'>
@@ -138,7 +144,7 @@ const VFWidgetI = () => {
                </div>
                </div>
             </div>
-            {isLandScape && <div onClick={handleContinue} className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>}
+            <div onClick={handleContinue} className='w-[199.43px] h-[31px] font-[700] text-[9.39px] bg-[#9413E6] self-center mt-10 rounded-[3.13px] flex justify-center items-center cursor-pointer'>Continue</div>
     </>
   )
 }
